@@ -11,8 +11,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class WelcomeController {
 
     @GetMapping
-    public ResponseEntity<String> welcomeScreen(){
-        return ResponseEntity.ok().body("Welcome to Streaming Diary");
+    public String welcomeScreen(){
+        return "index";
+    }
+
+    @GetMapping("/login")
+    public String loginScreen(){
+        return "WelcomeScreen/login";
+    }
+
+
+    @GetMapping("/register")
+    public String registerScreen(){
+        return "WelcomeScreen/register";
     }
 
 
