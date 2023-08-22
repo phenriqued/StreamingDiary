@@ -15,11 +15,5 @@ public class WelcomeController {
         return "index";
     }
 
-    @GetMapping("/register")
-    public String registerScreen(){
-        return "Authentication/register";
-    }
-
-
 
 }

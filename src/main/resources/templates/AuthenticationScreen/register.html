@@ -11,15 +11,15 @@
 <body>
 
 <div class="container">
-  <form class="form" id="registerForm">
-    <h2>Cadastro</h2>
-    <label for="username">Username:</label>
+  <form class="form" id="registerForm" method="post" action="/StreamingDiary/login">
+    <h2>Register</h2>
+    <label for="username">Nick name:</label>
     <input type="text" id="username" name="username" required>
     <label for="email">Email:</label>
     <input type="email" id="email" name="email" required>
     <label for="password">Password:</label>
     <input type="password" id="password" name="password" required>
-    <button type="submit">Cadastrar</button>
+    <button type="submit">Inscribe</button>
     <a class="small-link" href="/StreamingDiary/login">Login</a>
   </form>
 </div>
