@@ -15,7 +15,7 @@ public class UserEntity {
     @Column(unique = true)
     private String nickName;
     private String password;
-    @Column(unique = true)
+    @Embedded
     private Email email;
 
     public UserEntity() {}
@@ -24,7 +24,7 @@ public class UserEntity {
         this.id = id;
         this.nickName = nickName;
         this.password = password;
-        this.email.setEmailAddress(email);
+        this.email = new Email(email);
     }
 
     public Long getId() {
