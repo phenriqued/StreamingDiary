@@ -14,6 +14,12 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
+    public void save(UserDTO user){
+        if(user == null){
+            throw new RuntimeException("user cannot be null!");
+        }
+        userRepository.save(new UserEntity(user));
+    }
 
     public UserDTO login(Email email, String password) {
         UserEntity user = userRepository.findByEmail(email);

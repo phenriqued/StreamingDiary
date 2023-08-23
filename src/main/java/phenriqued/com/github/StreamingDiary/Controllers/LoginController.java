@@ -25,7 +25,7 @@ public class LoginController {
     public String processLogin(@RequestBody UserDTO userDTO){
         UserDTO user = userService.login(userDTO.getEmail(), userDTO.getPassword());
         if(user != null){
-            return "Success";
+            return "redirect:/StreamingDiary/home";
         }else{
             return "redirect:/StreamingDiary/login";
         }

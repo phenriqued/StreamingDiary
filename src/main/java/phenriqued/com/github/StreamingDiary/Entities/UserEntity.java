@@ -1,6 +1,7 @@
 package phenriqued.com.github.StreamingDiary.Entities;
 
 import jakarta.persistence.*;
+import phenriqued.com.github.StreamingDiary.DTO.UserDTO;
 import phenriqued.com.github.StreamingDiary.Util.Email.Email;
 
 import java.util.Objects;
@@ -25,6 +26,12 @@ public class UserEntity {
         this.nickName = nickName;
         this.password = password;
         this.email = new Email(email);
+    }
+    public UserEntity(UserDTO dto){
+        this.id = dto.getId();
+        this.nickName = dto.getNickName();
+        this.password = dto.getPassword();
+        this.email = dto.getEmail();
     }
 
     public Long getId() {
@@ -67,5 +74,4 @@ public class UserEntity {
     public int hashCode() {
         return id != null ? id.hashCode() : 0;
     }
-
 }
